@@ -1,3 +1,4 @@
+import { getYear } from "@/node_modules/date-fns/getYear";
 import Image from "next/image";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { getMonthName } from "../../library/date-helper";
@@ -15,7 +16,7 @@ export default function CalendarHeader(props: HeaderProps) {
             <div>
                 <a href="#" onClick={props.previousClick}><FaChevronLeft /></a>
             </div>
-            <div>{getMonthName(props.date)}</div>
+            <div className="text-2xl">{getMonthName(props.date)} {getYear(props.date)}</div>
             <div>
                 <a href="#" onClick={props.nextClick}><FaChevronRight /></a>
             </div>
