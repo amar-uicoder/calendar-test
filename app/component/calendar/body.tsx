@@ -44,7 +44,7 @@ export default function Body(props: BodyProps) {
         <div className="grid grid-cols-7 py-3 gap-2">
             {DAYS.map((day: string, index: number) => <div className="text-center font-bold" key={index}>{day}</div>)}
             {Array(getMonthStart(props.date)).fill(1).map((el, i) =>
-                <div className="invisible"></div>
+                <div className="invisible" key={i}></div>
             )}
             {data.map((interval: Data) =>
                 <Card value={interval.value} key={interval.value} data={interval.selected} />
